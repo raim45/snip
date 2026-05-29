@@ -1,0 +1,30 @@
+{
+  "name": "snip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raim45/snip.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/raim45/snip/issues"
+  },
+  "homepage": "https://github.com/raim45/snip#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "helmet": "^8.2.0",
+    "nanoid": "^3.3.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
