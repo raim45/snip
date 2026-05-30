@@ -4,6 +4,7 @@ const cors = require("cors")
 const app = express()
 const route = require("./routes/paths")
 const snipped = require("./data")
+const error = require("./middleware/errorHandler")
 
 
 app.use(express.json())
@@ -20,5 +21,6 @@ app.get("/:shortCode", (req, res)=>{
     return res.redirect(301, item.originalUrl )
  
 })
+app.use(error)
 
 module.exports = app
