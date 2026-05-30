@@ -1,6 +1,5 @@
 const snip = require("../models/snipD")
-
-const snipped = []
+const snipped = require("../data")
 
 const getUrls =(req, res)=>{
     res.status(200).json({sucess: true, data: snipped})
