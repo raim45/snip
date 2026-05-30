@@ -16,7 +16,7 @@ const getUrl = (req, res)=>{
     return res.status(200).json({success: true, data: item})
 }
 
-const create = (req, res)=>{
+const createUrl = (req, res)=>{
     const {url}  = req.body
     const item = snip(url)
     snipped.push(item)
@@ -41,6 +41,6 @@ const deleteUrl = (req, res)=>{
 module.exports = { 
     getUrls,
     getUrl,
-    create,
+    createUrl,
     deleteUrl,
 }
