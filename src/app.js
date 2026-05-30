@@ -16,7 +16,7 @@ app.get("/:shortCode", (req, res)=>{
     if(!item){
         return res.status(404).json({sucess: false, msg: "url does not exist bro"})
     }
-
+    item.click++
     return res.redirect(301, item.originalUrl )
  
 })

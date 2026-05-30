@@ -10,17 +10,18 @@ const getUrl = (req, res)=>{
     const {id} = req.params
     const item = snipped.find(item => item.id === id)
     if(!item){
-        return res.status(404).json({sucess: false, msg: "id does not exist"})
+        return res.status(404).json({success: false, msg: "id does not exist"})
     }
-    return res.status(200).json({success: true, data: item})
+    
+    return res.status(200).json({success: true, data: item,})
 }
 
 const createUrl = (req, res)=>{
     const {url}  = req.body
     const item = snip(url)
     snipped.push(item)
-
-    return res.status(201).json({success: true, data: item})
+    const fullUrl = `${req.protocol}://${req.get("host")}/${item.shortCode}`
+    return res.status(201).json({success: true, data: item, shortUrl: fullUrl})
 
 
 }

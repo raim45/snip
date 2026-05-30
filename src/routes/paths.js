@@ -5,6 +5,6 @@ const calls = require("../controllers/snipC")
 route.get("/", calls.getUrls)
 route.get("/:id", calls.getUrl)
 route.post("/", calls.createUrl)
-route.delete("/", calls.deleteUrl)
+route.delete("/:id", calls.deleteUrl)
 
 module.exports = route
