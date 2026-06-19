@@ -1,4 +1,4 @@
-const {nanoid } = require("nanoid")
+import  {nanoid } from 'nanoid'
 
 const snip = (url) =>{
     const item ={
@@ -12,4 +12,4 @@ const snip = (url) =>{
 
 }
 
-module.exports = snip
+export default snip

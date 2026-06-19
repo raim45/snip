@@ -1,3 +1,3 @@
 const snipped = []
 
-module.exports = snipped
+export default snipped

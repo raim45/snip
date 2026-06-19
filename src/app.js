@@ -1,11 +1,11 @@
-const express = require("express")
-const helmet = require("helmet")
-const cors = require("cors")
-const app = express()
-const route = require("./routes/paths")
-const snipped = require("./data")
-const error = require("./middleware/errorHandler")
+import express from 'express'
+import helmet from 'helmet'
+import cors from 'cors'
+import route from './routes/paths.js'
+import snipped from './data.js'
+import error from './middleware/errorHandler.js'
 
+const app = express()
 
 app.use(express.json())
 app.use(cors())
@@ -23,4 +23,4 @@ app.get("/:shortCode", (req, res)=>{
 })
 app.use(error)
 
-module.exports = app
+export default app

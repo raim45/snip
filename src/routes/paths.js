@@ -1,11 +1,11 @@
-const express = require("express")
+import express from 'express'
+import { getUrls, getUrl, createUrl, deleteUrl } from '../controllers/snipC.js'
+import valid from '../middleware/validateUrl.js'
 const route = express.Router()
-const calls = require("../controllers/snipC")
-const valid = require("../middleware/validateUrl")
 
-route.get("/", calls.getUrls)
-route.get("/:id", calls.getUrl)
-route.post("/", valid, calls.createUrl)
-route.delete("/:id", calls.deleteUrl)
+route.get("/", getUrls)
+route.get("/:id", getUrl)
+route.post("/", valid, createUrl)
+route.delete("/:id", deleteUrl)
 
-module.exports = route
+export default route

@@ -1,12 +1,12 @@
-const snip = require("../models/snipD")
-const snipped = require("../data")
+import snip from '../models/snipD.js'
+import snipped from  '../data.js'
 
-const getUrls =(req, res)=>{
+export const getUrls =(req, res)=>{
     res.status(200).json({sucess: true, data: snipped})
 
 }
 
-const getUrl = (req, res)=>{
+export const getUrl = (req, res)=>{
     const {id} = req.params
     const item = snipped.find(item => item.id === id)
     if(!item){
@@ -16,7 +16,7 @@ const getUrl = (req, res)=>{
     return res.status(200).json({success: true, data: item,})
 }
 
-const createUrl = (req, res)=>{
+export const createUrl = (req, res)=>{
     const {url}  = req.body
     const item = snip(url)
     snipped.push(item)
@@ -27,7 +27,7 @@ const createUrl = (req, res)=>{
 }
 
 
-const deleteUrl = (req, res)=>{
+export const deleteUrl = (req, res)=>{
     const {id} = req.params
     const item = snipped.find(item => item.id === id)
     if(!item){
@@ -35,12 +35,4 @@ const deleteUrl = (req, res)=>{
     }
     snipped.splice(snipped.indexOf(item), 1)
     return res.status(200).json({success: true})
-}
-
-
-module.exports = { 
-    getUrls,
-    getUrl,
-    createUrl,
-    deleteUrl,
 }

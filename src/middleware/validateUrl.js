@@ -11,4 +11,4 @@ const validateUrl =(req, res, next)=>{
 
 }
 
-module.exports = validateUrl
+export default validateUrl
