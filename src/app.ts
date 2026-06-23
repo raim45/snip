@@ -1,4 +1,4 @@
-import express from 'express'
+import express, {Request, Response} from 'express'
 import helmet from 'helmet'
 import cors from 'cors'
 import route from './routes/paths.js'
@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(cors())
 app.use(helmet())
 app.use("/api/snip", route )
-app.get("/:shortCode", (req, res)=>{
+app.get("/:shortCode", (req: Request, res: Response)=>{
     const {shortCode} = req.params
     const item = snipped.find(item => item.shortCode === shortCode)
     if(!item){

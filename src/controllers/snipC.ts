@@ -1,12 +1,13 @@
-import snip from '../models/snipD.js'
+import {Response, Request} from 'express'
+import { snip } from '../models/snipD.js'
 import snipped from  '../data.js'
 
-export const getUrls =(req, res)=>{
+export const getUrls =(req: Request, res: Response)=>{
     res.status(200).json({sucess: true, data: snipped})
 
 }
 
-export const getUrl = (req, res)=>{
+export const getUrl = (req: Request, res: Response)=>{
     const {id} = req.params
     const item = snipped.find(item => item.id === id)
     if(!item){
@@ -16,7 +17,7 @@ export const getUrl = (req, res)=>{
     return res.status(200).json({success: true, data: item,})
 }
 
-export const createUrl = (req, res)=>{
+export const createUrl = (req: Request, res: Response)=>{
     const {url}  = req.body
     const item = snip(url)
     snipped.push(item)
@@ -27,7 +28,7 @@ export const createUrl = (req, res)=>{
 }
 
 
-export const deleteUrl = (req, res)=>{
+export const deleteUrl = (req: Request, res: Response)=>{
     const {id} = req.params
     const item = snipped.find(item => item.id === id)
     if(!item){

@@ -1,6 +1,15 @@
 import  {nanoid } from 'nanoid'
 
-const snip = (url) =>{
+export interface NewUrl {
+    id: string;
+    originalUrl: string;
+    shortCode: string;
+    createdAT: Date
+    click: number; 
+}
+
+
+export const snip = (url: string): NewUrl  =>{
     const item ={
     id: nanoid(),
     originalUrl: url,
@@ -9,7 +18,4 @@ const snip = (url) =>{
     click: 0,
     }
     return item
-
 }
-
-export default snip

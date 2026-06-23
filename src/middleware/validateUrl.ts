@@ -1,4 +1,6 @@
-const validateUrl =(req, res, next)=>{
+import {Request, Response, NextFunction} from 'express'
+
+const validateUrl =(req: Request, res: Response, next: NextFunction)=>{
     const {url} = req.body
     if(!url){
         return res.status(400).json({success: false, msg: "no url provided"})
