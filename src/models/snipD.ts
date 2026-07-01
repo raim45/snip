@@ -1,6 +1,6 @@
 import  {nanoid } from 'nanoid'
 
-export interface NewUrl {
+export interface NewUrl{
     id: string;
     originalUrl: string;
     shortCode: string;
